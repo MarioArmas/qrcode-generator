@@ -19,22 +19,23 @@ export default function QrCodeGenerator() {
       <h1>QR Code Generator</h1>
       <p>Enter the text you want to convert into a QR code:</p>
       <input
+        className='input-text'
         type="text"
         placeholder="Enter text here"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <div style={{ marginTop: '10px' }}>
-        <span>
-          Foreground Color:
+      <div className='color-picker'>
+        <span className='color'>
+          <p>Foreground Color: </p>
           <input
             type="color"
             value={fgColor}
             onChange={(e) => setFgColor(e.target.value)}
           />
         </span>
-        <span style={{ marginLeft: '10px' }}>
-          Background Color:
+        <span className='color'>
+          <p>Background Color: </p>
           <input
             type="color"
             value={bgColor}
@@ -42,9 +43,9 @@ export default function QrCodeGenerator() {
           />
         </span>
       </div>
-      <button onClick={handleGenerate} style={{ marginTop: '10px' }}>Generate QR Code</button>
+      <button onClick={handleGenerate}>Generate QR Code</button>
       {qrValue && (
-        <div style={{ marginTop: '20px' }}>
+        <div className='card' style={{ backgroundColor: bgColor }}>
           <QRCode value={qrValue} fgColor={fgColor} bgColor={bgColor} />
         </div>
       )}

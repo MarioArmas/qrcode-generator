@@ -1,0 +1,208 @@
+/* CONTENEDOR */
+.qr-code-generator {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5em;
+    gap: 25px;
+    background: var(--primary-color);
+}
+
+/* TITULO */
+.qr-code-generator h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+/* TEXTO */
+.qr-code-generator p {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--fourth-color);
+    display: flex;
+    align-items: center;
+}
+
+/* COLOR PICKERS CONTENEDOR */
+.qr-code-generator .color {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.qr-code-generator .color-picker {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 10px 15px;
+    border-radius: 15px;
+    background: var(--primary-color);
+
+    box-shadow:
+        4px 4px 10px rgba(0,0,0,0.1),
+        -4px -4px 10px rgba(255,255,255,0.7);
+}
+
+.qr-code-generator .color-picker label {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+/* estilo del color picker */
+.qr-code-generator input[type="color"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: none;
+
+    box-shadow:
+        inset 2px 2px 5px rgba(0,0,0,0.15),
+        inset -2px -2px 5px rgba(255,255,255,0.7);
+}
+
+/* quitar borde interno feo */
+.qr-code-generator input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 10px;
+}
+
+.qr-code-generator input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+/* INPUT TEXTO (HUNDIDO) */
+.qr-code-generator input.input-text {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+
+    background: var(--primary-color);
+
+    box-shadow:
+        inset 6px 6px 12px rgba(0, 0, 0, 0.1),
+        inset -6px -6px 12px rgba(255, 255, 255, 0.7);
+}
+
+/* COLOR PICKER (ELEVADO) */
+.qr-code-generator input[type="color"] {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: var(--primary-color);
+
+    box-shadow:
+        4px 4px 8px rgba(0,0,0,0.15),
+        -4px -4px 8px rgba(255,255,255,0.7);
+}
+
+/* BOTON (ELEVADO + ANIMACION) */
+.qr-code-generator button {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 350px;
+    cursor: pointer;
+    border-radius: 50px;
+    color: #fff;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    background: var(--primary-color);
+
+    box-shadow:
+        6px 6px 12px rgba(0, 0, 0, 0.15),
+        -6px -6px 12px rgba(255, 255, 255, 0.7);
+
+    transition: all 0.2s ease;
+}
+
+/* CAPA BASE */
+.qr-code-generator button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--third-color);
+  border-radius: 999px;
+  z-index: -2;
+}
+
+/* CAPA ANIMADA */
+.qr-code-generator button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background-color: var(--fourth-color);
+  transition: width 0.3s ease;
+  border-radius: 999px;
+  z-index: -1;
+}
+
+/* HOVER */
+.qr-code-generator button:hover::before {
+  width: 100%;
+}
+
+/* CLICK (EFECTO HUNDIDO) */
+.qr-code-generator button:active {
+    transform: scale(0.97);
+
+    box-shadow:
+        inset 4px 4px 8px rgba(0, 0, 0, 0.15),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+}
+
+/* CARD QR (ELEVADO) */
+.qr-code-generator .card {
+    padding: 20px;
+    border-radius: 20px;
+
+    background: var(--primary-color);
+
+    box-shadow:
+        10px 10px 20px rgba(0, 0, 0, 0.15),
+        -10px -10px 20px rgba(255, 255, 255, 0.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ANIMACION QR */
+.qr-code-generator .card img {
+    animation: fadeIn 0.3s ease;
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

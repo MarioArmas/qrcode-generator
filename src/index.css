@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-color: #EDEFF2;   /* fondo */
+  --secondary-color: #3A3D4D; /* títulos */
+  --third-color: #7A7FDB;     /* botón */
+  --fourth-color: #5C60C9;    /* hover */
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+input:focus {
+  outline: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
